@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  flask-api:
+    build: ./flask-api
+    ports:
+      - "5000:5000"
+    depends_on:
+      - express-server
+    networks:
+      - app_network
+
+  express-server:
+    build: ./express-server
+    ports:
+      - "3000:3000"
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge

@@ -30,4 +30,4 @@ def get_sentiment_label(compound_score, pos_thresh=0.05, neg_thresh=-0.05):
         return "neutral"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
